@@ -1,13 +1,85 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Quicksand', sans-serif;
+  letter-spacing: 2px;
+}
+
+.container {
+  max-width: 500px;
+  min-height: 500px;
+  margin: 30px auto;
+  border: 1px solid #a9a9a9;
+  border-radius: 5px;
+  box-shadow: 0px 5px 15px #a9a9a9;
+  padding: 20px;
+  overflow: scroll;
+}
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.btn {
+  padding: 10px 20px;
+  font-family: 'Quicksand', sans-serif;
+  letter-spacing: 2px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.task {
+  background-color: #f0f0f0;
+  padding: 10px 20px;
+  margin: 10px 0;
+}
+.reminder {
+  border-left: 5px solid green;
+}
+.taskItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.formField {
+  max-width: 300px;
+  margin: 20px auto 30px auto;
+}
+.formEach {
+  margin-bottom: 10px;
+}
+.formField label {
+  display: block;
+  margin-bottom: 5px;
+}
+.formField input {
+  font-family: 'Quicksand', sans-serif;
+  letter-spacing: 2px;
+  padding: 5px;
+  width: 100%;
+}
+.selectCheckbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.selectCheckbox label {
+  flex: 2;
+}
+.selectCheckbox input {
+  flex: 1;
+  justify-self: flex-end;
+  height: 18px;
+}
+.setBtn {
+  background-color: #000;
+  width: 100%;
 }

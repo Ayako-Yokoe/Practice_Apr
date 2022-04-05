@@ -25,8 +25,8 @@ const AddTask = ({ onAdd }) => {
 
   return (
     <div>
-        <form onSubmit={onSubmit}>
-            <div>
+        <form className='formField' onSubmit={onSubmit}>
+            <div className='formEach'>
                 <label>Task</label>
                 <input 
                 type="text" 
@@ -35,7 +35,7 @@ const AddTask = ({ onAdd }) => {
                 onChange={(e) => setText(e.target.value)} 
                 />
             </div>
-            <div>
+            <div className='formEach'>
                 <label>Day</label>
                 <input 
                 type="text" 
@@ -44,7 +44,7 @@ const AddTask = ({ onAdd }) => {
                 onChange={(e) => setDay(e.target.value)}
                 />
             </div>
-            <div>
+            <div className='formEach selectCheckbox'>
                 <label>Set A Reminder</label>
                 <input 
                 type="checkbox"
@@ -54,7 +54,7 @@ const AddTask = ({ onAdd }) => {
                 />
             </div>
             <div>
-                <button type="submit">Set A Task</button>
+                <button className='btn setBtn' type="submit">Set A Task</button>
             </div>
         </form>
     </div>

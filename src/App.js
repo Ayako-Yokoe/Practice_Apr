@@ -5,31 +5,32 @@ import AddTask from './components/AddTask';
 
 
 function App() {
+  const [showBtn, setShowBtn] = useState(false)
   const [tasks, setTasks] = useState([
     {
       id: 1,
-      text: 'Do the laundry',
-      day: 'Apr 5',
+      text: "Do the laundry",
+      day: "Apr 5",
       reminder: true
     },
     {
       id: 2,
-      text: 'Take out the trash',
-      day: 'Apr 6',
+      text: "Take out the trash",
+      day: "Apr 6",
       reminder: true
     },
     {
       id: 3,
-      text: 'Go grocery shopping',
-      day: 'Apr 7',
+      text: "Go grocery shopping",
+      day: "Apr 7",
       reminder: false
     },
     {
       id: 4,
-      text: 'Valuum the living room',
-      day: 'Apr 8',
+      text: "Valuum the living room",
+      day: "Apr 8",
       reminder: false
-    },
+    }
   ])
 
   // Add Task
@@ -38,7 +39,6 @@ function App() {
     const newTask = { id, ...task }
     setTasks([...tasks, newTask ])
   }
-
 
   // Delete Task
   const deleteTask = (id) => {
@@ -55,11 +55,16 @@ function App() {
     )
   }
 
+  // Show Button
+  const showButton = () => {
+    setShowBtn(!showBtn)
+  }
+
 
   return (
-    <div className="App">
-      <Header title="Task Tracker" />
-      <AddTask onAdd={addTask} />
+    <div className="container">
+      <Header title="Task Tracker" onShow={showButton} showBtn={showBtn} />
+      {showBtn && <AddTask onAdd={addTask} />}
       {tasks.length > 0 
         ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} /> 
         : "No Tasks To Show"}
